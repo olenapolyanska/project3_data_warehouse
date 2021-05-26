@@ -155,7 +155,7 @@ to confirm that tables were successfully filled. Also was recommended
 "to rerun create_tables.py to reset your tables before each time you run this notebook".
 
 The pincipal part of the ETL development is the etl.py script.
-The etl.ipynb does complete data processing.
+The etl.ipynb does complete data processing fetching them from  AWS S3 bucket, storing in the staging tables, than transforming and loading into analytics tables of the project. 
  
 To run script:
 ```python
