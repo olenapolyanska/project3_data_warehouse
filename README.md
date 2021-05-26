@@ -110,11 +110,20 @@ Here is the example of the one log file content (data/log_data/2018/11/2018-11-0
 
 ---
 
-#### PROJECT ARCHITECTURE
+#### LAUNCHING A REDSHIFT CLUSTER
 
-The project software consists of :
+To launch a cluster first we need do fill the configuration file dwh.cfg.
+To do it we access AWS with our credentials.
+Next in AWS console AIM Service Dashboard we create AIM user with the name dwhuser.
 
-1. dwh.cfg
+Now we are running script create_cluster.ipynb to create Redshift Cluster using the AWS python SDK (IaC). 
+- Load DWH Params from a file
+- Create clients for EC2, S3, IAM and Redshift
+- Check out the data sources on S3
+- Create an IAM Role that makes Redshift able to access S3 bucket (ReadOnly)
+- Create a Reshift cluster dwhcluster
+- - The cluster endpoint and role ARN notes taken to dhw.cfg
+- Open an incoming TCP port to access the cluster ednpoint
 
 2. create_table.py 
 This is where the fact and dimension tables for the star schema in Redshift are created.
@@ -130,13 +139,10 @@ This is where are defined SQL statements, which will be imported into the two ot
 ---
 
 #### DATABASE and TABLES CREATION
-    
-The create_tables.py and DROP and CREATE queries of the 
-sql_queries.py script are completed to create "sparkifydb" database with songplays,
-users, songs, artists, time tables. The running of create_tables.py have to be done.
 
-The running test.ipynb is recommended after running create_tables.py 
-to confirm the creation of the tables with the correct columns.
+The create_tables.py  is where the fact and dimension tables for the star schema in Redshift are created.    
+The create_tables.py import DROP and CREATE queries of the 
+sql_queries.py script to do its work.  After completing the "dwhsparkify" database with all staging and analytics table are created.
 
 ---
 
