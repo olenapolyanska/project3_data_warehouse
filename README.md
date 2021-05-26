@@ -38,7 +38,7 @@ Log data: s3://udacity-dend/log_data
 Log data json path: s3://udacity-dend/log_json_path.json
 
 - Song data
-The Song data set is the subset of real data from the ![Million Song Dataset](https://labrosa.ee.columbia.edu/millionsong/). The song data set contains metadata about a song and the artist of that song stored in the JSON files. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to three files in song dataset in 
+The Song data set is the subset of real data from the Million Song Dataset (https://labrosa.ee.columbia.edu/millionsong/). The song data set contains metadata about a song and the artist of that song stored in the JSON files. The files are partitioned by the first three letters of each song's track ID. For example, here are filepaths to three files in song dataset in 
 s3://udacity-dend bucket:
 ```
 SONG_DATA
