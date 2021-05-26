@@ -112,15 +112,20 @@ Here is the example of the one log file content (data/log_data/2018/11/2018-11-0
 
 #### PROJECT ARCHITECTURE
 
-The project software consists of three python files:
+The project software consists of :
 
-1. create_table.py 
+1. dwh.cfg
+
+2. create_table.py 
 This is where the fact and dimension tables for the star schema in Redshift are created.
-2. etl.py 
+
+3. etl.py 
 This is where the data loading from S3 into staging tables on Redshift and then processing of that data into analytics tables on Redshift take place.
-3. sql_queries.py 
+
+4. sql_queries.py 
 This is where are defined SQL statements, which will be imported into the two other files above.
-4. And the project contains README.md. 
+
+5. And the project contains README.md. 
 
 ---
 
