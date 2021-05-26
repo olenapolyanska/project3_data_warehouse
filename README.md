@@ -12,6 +12,25 @@ Also the tasks that assigned to the data engeneer are : to test created database
 
 ---
 
+#### PROJECT STEPS
+Below are steps you can follow to complete each component of this project.
+
+Create Table Schemas
+Design schemas for your fact and dimension tables
+Write a SQL CREATE statement for each of these tables in sql_queries.py
+Complete the logic in create_tables.py to connect to the database and create these tables
+Write SQL DROP statements to drop tables in the beginning of create_tables.py if the tables already exist. This way, you can run create_tables.py whenever you want to reset your database and test your ETL pipeline.
+Launch a redshift cluster and create an IAM role that has read access to S3.
+Add redshift database and IAM role info to dwh.cfg.
+Test by running create_tables.py and checking the table schemas in your redshift database. You can use Query Editor in the AWS Redshift console for this.
+Build ETL Pipeline
+Implement the logic in etl.py to load data from S3 to staging tables on Redshift.
+Implement the logic in etl.py to load data from staging tables to analytics tables on Redshift.
+Test by running etl.py after running create_tables.py and running the analytic queries on your Redshift database to compare your results with the expected results.
+Delete your redshift cluster when finished.
+
+---
+
 #### SCHEMA DESIGN
  
 The created by data engineer _star schema design_ includes
