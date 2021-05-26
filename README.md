@@ -137,10 +137,12 @@ This is where are defined SQL statements, which will be imported into the two ot
 
 #### DATABASE and TABLES CREATION
 
-The create_tables.py  is where all staging and analytics tables for the star schema in Redshift are created.  
-
+The create_tables.py  is where all staging and analytics tables for the star schema in AWS Redshift are created.  
 The create_tables.py import DROP and CREATE queries of the sql_queries.py script to do its work.
-
+To run script:
+```python
+python create_tables.py
+```
 ---
 
 #### ETL PROCESS
