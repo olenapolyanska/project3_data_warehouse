@@ -98,8 +98,7 @@ This is where the fact and dimension tables for the star schema in Redshift are 
 This is where the data loading from S3 into staging tables on Redshift and then processing of that data into analytics tables on Redshift take place.
 3. sql_queries.py 
 This is where are defined SQL statements, which will be imported into the two other files above.
-
-And the project contains README.md. 
+4. And the project contains README.md. 
 
 ---
 
