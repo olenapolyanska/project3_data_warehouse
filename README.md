@@ -125,9 +125,6 @@ Now we are running script create_cluster.ipynb to create Redshift Cluster using 
 - - The cluster endpoint and role ARN notes taken to dhw.cfg
 - Open an incoming TCP port to access the cluster ednpoint
 
-2. create_table.py 
-This is where the fact and dimension tables for the star schema in Redshift are created.
-
 3. etl.py 
 This is where the data loading from S3 into staging tables on Redshift and then processing of that data into analytics tables on Redshift take place.
 
@@ -140,9 +137,9 @@ This is where are defined SQL statements, which will be imported into the two ot
 
 #### DATABASE and TABLES CREATION
 
-The create_tables.py  is where the fact and dimension tables for the star schema in Redshift are created.    
-The create_tables.py import DROP and CREATE queries of the 
-sql_queries.py script to do its work.  After completing the "dwhsparkify" database with all staging and analytics table are created.
+The create_tables.py  is where all staging and analytics tables for the star schema in Redshift are created.  
+
+The create_tables.py import DROP and CREATE queries of the sql_queries.py script to do its work.
 
 ---
 
