@@ -138,7 +138,9 @@ This is where are defined SQL statements, which will be imported into the two ot
 #### DATABASE and TABLES CREATION
 
 The create_tables.py  is where all staging and analytics tables for the star schema in AWS Redshift are created.  
-The create_tables.py import DROP and CREATE queries of the sql_queries.py script to do its work.
+The script import DROP and CREATE queries of the sql_queries.py script to do its work. To establishes connection 
+with Postgres Database the content of the dwh.cfg file is used.
+ 
 To run script:
 ```python
 python create_tables.py
@@ -153,14 +155,12 @@ to confirm that tables were successfully filled. Also was recommended
 "to rerun create_tables.py to reset your tables before each time you run this notebook".
 
 The pincipal part of the ETL development is the etl.py script.
-The etl.ipynb and test.ipynb scripts are auxiliary. They are designed only for using by 
-for the data engineer during project development.
-
-The etl.py facilitates the processing of the entire datasets.
-It reads files from song_data and log_data JSON files and loads them into 
-corresponding tables. 
-To complete etl.py development the INSERT queries and SELECT finding songs query
-of the sql_queries.py are filled.
+The etl.ipynb does complete data processing.
+ 
+To run script:
+```python
+python etl.py
+```
 
 ---
 
