@@ -172,18 +172,32 @@ created database and ETL pipline have been developed with the goal to optimize
 analytics.
 
 For example,
- - SELECT count(song_id) FROM songs
+ - How many rows in artist table of the dhwspakify?
+```SQL
+SELECT COUNT(*)FROM artists;
+```
+![example 1 database query](project3_query1.png)
  
- ![example of the log_data structure](images/project1a_query1.png)
+ - How many female users did listened music to using sparkify application?
+```SQL
+SELECT COUNT(DISTINCT(sp.user_id))
+FROM songplays sp
+JOIN users us ON ( sp.user_id=us.user_id )
+WHERE us.gender = 'F'
+;
+```
+![example 2 database query](project3_query2.png)
  
- - SELECT count(user_id) FROM users
- 
- ![example of the log_data structure](images/project1a_query2.png)
- 
- - SELECT count(level) FROM users
- 
- ![example of the log_data structure](images/project1a_query3.png)
- 
- 
+ - How many songs were played from the TOP-10 played artist?
+```SQL
+SELECT ar.name, ss.title, count(ar.name) as count_artist
+FROM songplays sp
+JOIN artists ar ON ( sp.artist_id = ar.artist_id )
+JOIN songs ss   ON ( sp.song_id = ss.song_id)
+GROUP BY ar.name, ss.title
+ORDER BY count_artist DESC
+LIMIT 10;
+```
+![example 3 database query](project3_query3.png)
 
 ---
